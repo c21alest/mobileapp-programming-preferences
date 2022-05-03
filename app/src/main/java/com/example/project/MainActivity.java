@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        preferences = getSharedPreferences("preferences", MODE_PRIVATE);
         String name = preferences.getString("name", "inget namn hittades");
         textViewName.setText(name);
     }
