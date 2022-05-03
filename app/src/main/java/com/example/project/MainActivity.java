@@ -10,6 +10,7 @@ import androidx.appcompat.widget.Toolbar;
 public class MainActivity extends AppCompatActivity {
 
     TextView textViewName;
+    SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,14 +20,18 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         textViewName = findViewById(R.id.name);
+
+        preferences = getSharedPreferences("preferences", MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("name" , "Alexander");
+        editor.apply();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
 
-        SharedPreferences preferences = getSharedPreferences("preferences", MODE_PRIVATE);
-
+        preferences = getSharedPreferences("preferences", MODE_PRIVATE);
         String name = preferences.getString("name", "inget namn hittades");
         textViewName.setText(name);
     }
