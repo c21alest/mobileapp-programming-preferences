@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
 
         // Sätter texten för textview till värdet från shared preferences
-        String name = preferences.getString("text", "inget namn hittades");
+        String name = preferences.getString("text", "ingen text hittades");
         textViewName.setText(name);
     }
 }
