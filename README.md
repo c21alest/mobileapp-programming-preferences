@@ -92,7 +92,7 @@ _Figur 3.3 Startsidan med menyn inaktiv_
 
 <img src="meny.png" style="width: 40%;"/>
 
-_Figur 3.3 Startsidan med menyn aktiv_
+_Figur 3.4 Startsidan med menyn aktiv_
 
 ## Bundle och Shared Preferences Editor
 När den tidigare aktiviteten skickar en intent fångas den upp och läggs i strängen text som syns i koden nedan (Figur 4.1). Det som händer
