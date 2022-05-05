@@ -89,6 +89,7 @@ _Figur 3.2 Java kod för meny_
 
 _Figur 3.3 Startsidan med menyn inaktiv_
 
+
 <img src="meny.png" style="width: 40%;"/>
 
 _Figur 3.3 Startsidan med menyn aktiv_
@@ -123,4 +124,4 @@ _Figur 4.2 kod för att visa Shared Preference värdet_
 
 <img src="show.gif" style="width: 40%;"/>
 
-_Exempel på hur appen fungerar_
+_Video exempel på hur appen fungerar_
