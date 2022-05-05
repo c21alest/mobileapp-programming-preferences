@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         preferences = getSharedPreferences("preferences", MODE_PRIVATE);
         Bundle extras = getIntent().getExtras();
 
+        // Om extras från tidigare intent finns så lägg detta i shared preferences
         if (extras != null) {
             String text = extras.getString("text");
             SharedPreferences.Editor editor = preferences.edit();
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean onCreateOptionsMenu(Menu menu)
     {
+        // Visar menyalternativ i menyn
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
         return true;
@@ -47,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
+            // När Ändra text väljs i menyn skapas en ny intent
             case R.id.change_text:
                 startActivity(new Intent(this, SecondActivity.class));
                 return true;
@@ -59,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
+        // Sätter texten för textview till värdet från shared preferences
         String name = preferences.getString("text", "inget namn hittades");
         textViewName.setText(name);
     }

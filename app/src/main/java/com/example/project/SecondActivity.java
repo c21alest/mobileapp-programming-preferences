@@ -27,9 +27,11 @@ public class SecondActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Instanserar ny intent och hämtar textvärde
                 Intent intent = new Intent(SecondActivity.this, MainActivity.class);
                 textToSendString = textToSend.getText().toString();
 
+                // Lägger till extras i intent
                 intent.putExtra("text", textToSendString);
                 startActivity(intent);
             }
