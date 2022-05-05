@@ -21,8 +21,8 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        button = findViewById(R.id.button);
-        textToSend = findViewById(R.id.text);
+        button = findViewById(R.id.set_button);
+        textToSend = findViewById(R.id.input_text);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

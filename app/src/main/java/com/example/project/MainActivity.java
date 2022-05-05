@@ -3,6 +3,7 @@ package com.example.project;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -25,11 +26,15 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         textViewName = findViewById(R.id.name);
-
         preferences = getSharedPreferences("preferences", MODE_PRIVATE);
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("name" , "Alexander");
-        editor.apply();
+        Bundle extras = getIntent().getExtras();
+
+        if (extras != null) {
+            String text = extras.getString("text");
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putString("text" , text);
+            editor.apply();
+        }
     }
 
     public boolean onCreateOptionsMenu(Menu menu)
@@ -54,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        String name = preferences.getString("name", "inget namn hittades");
+        String name = preferences.getString("text", "inget namn hittades");
         textViewName.setText(name);
     }
 }
