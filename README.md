@@ -2,9 +2,9 @@
 # Assignment 6: Shared preferences
 
 ## Shared Preferences instans
-Shared Preferences är en metod som kan användas för att bevara ett värde. När du sätter en text för en viss widget kommer den
+Shared Preferences är en metod som kan användas för att bevara ett värde. När man sätter en text för en viss widget kommer den
 att försvinna så fort appen avslutas. Men med hjälp av shared preferences kan dessa värden sparas i en fil, för att sedan hämta
-denna data och visa den på alla önskade ställen. Senare kommer värdet att bestämmas men först instanseras ett Shared Preferences objekt,
+denna data och visa den på alla önskade ställen. Senare kommer värdet att bestämmas men först instansieras ett Shared Preferences objekt,
 kod för detta syns nedan. 
 
 ```
@@ -13,11 +13,11 @@ kod för detta syns nedan.
 _Figur 1.1 Kod för att instansera Shared Preferences_
 
 ## Second Activity - Andra aktiviteten
-Eftersom värdet för shared preferences ska bestämmas i en annan aktivitet skapas denna under namnet activity_second.xml. Den
+Eftersom värdet för shared preferences ska bestämmas i en annan aktivitet skapas den i namnet activity_second.xml. Den
 innehåller tre widgets, där den första är en vanlig TextView med beskrivande text, den andra är en EditText där användaren
 skriver in den text den önskar skicka, och den sista är en button där en click listner kommer kunna sättas för att skicka all
-extras till en ny intent. Koden för dessa funktioner beskrivs i SecondActivity.java och syns nedan. Det som händer är att variaberna
-länkas till sina widgets för att sedan skapa en click listner på knappen som när det triggas skickar en intent med datan från
+extras till en ny intent. Koden för dessa funktioner beskrivs i SecondActivity.java och syns nedan. Det som händer är att variablerna
+länkas till sina widgets för att sedan skapa en click listner på knappen, och när den triggas skickas en intent med datan från
 EditText widgeten som skapades tidigare.
 
 ```
@@ -40,12 +40,13 @@ EditText widgeten som skapades tidigare.
 _Figur 2.1 kod för click listner_
 
 <img src="change_text.png" style="width: 40%;"/>
+
 _Figur 2.2 Andra aktivitet för att ändra text_
 
 ## Meny
-Nu när en andra aktivitet finns måste denna kommas åt på något sätt, och i detta fall görs detta med en meny. Det första som behövs
+Nu när en andra aktivitet finns måste denna kunna kommas åt på något sätt, och i detta fall görs detta med en meny. Det första som behövs
 är en resurs för menyn som i detta fallet heter menu.xml (figur 3.1), här besrivs alltså layouten för menyn alltså de knappar som finns i menyn.
-Här finns i dagsläget enbart en som just tar en till den andra aktiviteten som skapades. 
+Här finns i dagsläget enbart ett alternativ som just tar en till den andra aktiviteten som skapades. 
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -85,10 +86,12 @@ i dagsläget startar en intent som tar användaren till den andra aktivitet, som
 _Figur 3.2 Java kod för meny_
 
 <img src="main.png" style="width: 40%;"/>
+
 _Figur 3.3 Startsidan med menyn inaktiv_
 
 <img src="meny.png" style="width: 40%;"/>
-_Figur 3.3 Startsidan med menyn aktiv
+
+_Figur 3.3 Startsidan med menyn aktiv_
 
 ## Bundle och Shared Preferences Editor
 När den tidigare aktiviteten skickar en intent fångas den upp och läggs i strängen text som syns i koden nedan (Figur 4.1). Det som händer
@@ -105,7 +108,7 @@ aktiviteten öppnas igen, detta syns i figur 4.2 nedan.
             editor.apply();
         }
 ```
-_Figur 4.1 Kod för att deklarera värdet från extras i Shared Preferences_
+_Figur 4.1 Kod för att definera värdet från extras i Shared Preferences_
 
 ```
     protected void onResume() {
