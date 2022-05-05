@@ -120,3 +120,7 @@ _Figur 4.1 Kod för att definera värdet från extras i Shared Preferences_
     }
 ```
 _Figur 4.2 kod för att visa Shared Preference värdet_
+
+<img src="show.gif" style="width: 40%;"/>
+
+_Exempel på hur appen fungerar_
